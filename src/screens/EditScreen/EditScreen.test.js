@@ -1,15 +1,15 @@
 import EditScreen from "./EditScreen";
-import renderer from "react-test-renderer";
+import { render } from "@testing-library/react-native";
 
 describe("EditScreen", () => {
-  it("renders correctly", () => {
-    const tree = renderer.create(<EditScreen />).toJSON();
-    expect(tree).toMatchSnapshot();
+  it("renders with correct elements", () => {
+    const { getAllByText } = render(<EditScreen />);
+
+    expect(getAllByText("EditScreen")).toBeTruthy();
   });
 
-  it("renders text", () => {
-    const tree = renderer.create(<EditScreen />);
-    const text = tree.root.findByType("Text");
-    expect(text.props.children).toContain("EditScreen");
+  it("has edit screen text", () => {
+    const { getAllByText } = render(<EditScreen />);
+    expect(getAllByText("EditScreen")).toBeTruthy();
   });
 });

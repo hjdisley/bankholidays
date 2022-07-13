@@ -1,6 +1,5 @@
 import HomeScreen from "./HomeScreen";
-import { fireEvent, render, screen } from "@testing-library/react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { fireEvent, render } from "@testing-library/react-native";
 
 const navigate = jest.fn();
 
