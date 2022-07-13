@@ -16,7 +16,7 @@ Please also provide some tests using a library of your choosing (preferably jest
 
 ## Usage
 
-1.  Clone the repo with  `git clone [REPO_URL]`  command
+1.  Clone the repo with  `git clone https://github.com/hjdisley/bankholidays`  command
 2.  Switch to the project's root directory in terminal
 3. Install Expo CLI if it is not already installed on your machine `yarn global add expo-cli`
 4.  Install the dependencies by running  `yarn`
@@ -36,9 +36,12 @@ Mobile setup
 
 - `src`: Contains all the source code of the application
 - 
+
 ## Technology
 - [Expo](https://docs.expo.dev/)
 - [React Native](https://reactnative.dev/)
+- [React Navigation](https://reactnavigation.org/)
 - [UK Bank Holiday API](https://www.gov.uk/bank-holidays.json)
 - [Jest](https://jestjs.io/)
+- [React Native Testing Library](https://callstack.github.io/react-native-testing-library/)
 
