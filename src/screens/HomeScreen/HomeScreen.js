@@ -47,21 +47,20 @@ export default function HomeScreen({ navigation }) {
           Upcoming Holidays
         </Text>
       </Center>
-
-      {data &&
-        !isLoading &&
-        data[selectedDivision]?.map((holiday, i) => {
-          return (
-            <Center>
+      <Center>
+        {data &&
+          !isLoading &&
+          data[selectedDivision]?.map((holiday, i) => {
+            return (
               <BankHolidayCard
                 data={data[selectedDivision]}
                 navigation={navigation}
-                key={i + holiday.title + holiday.date}
+                key={i}
                 holiday={holiday}
               />
-            </Center>
-          );
-        })}
+            );
+          })}
+      </Center>
     </SafeAreaView>
   );
 }
