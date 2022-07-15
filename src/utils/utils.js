@@ -12,7 +12,7 @@ export const extractBankHolidays = (data) => {
         return dateWithinSixMonths(holiday.date);
       })
       .slice(0, 5);
-    nextFiveBankHolidays[division] = formattedHolidays;
+    nextFiveBankHolidays[convertKebabToTitleCase(division)] = formattedHolidays;
   });
 
   return nextFiveBankHolidays;
@@ -23,4 +23,13 @@ export const dateWithinSixMonths = (date) => {
   const sixMonthsFromNow = moment().add(6, "months");
 
   return moment(date).isBetween(today, sixMonthsFromNow);
+};
+
+export const convertKebabToTitleCase = (str) => {
+  return str
+    .split("-")
+    .map((word) => {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
 };

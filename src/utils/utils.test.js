@@ -1,5 +1,5 @@
 import { dateWithinSixMonths, extractBankHolidays } from "./utils";
-import testData from "./testData";
+import { testData } from "../testData";
 
 describe("extractBankHolidays", () => {
   it("should return an object", () => {
@@ -11,9 +11,9 @@ describe("extractBankHolidays", () => {
     const bankHolidays = extractBankHolidays(testData);
 
     expect(Object.keys(bankHolidays)).toEqual([
-      "england-and-wales",
-      "scotland",
-      "northern-ireland",
+      "England And Wales",
+      "Scotland",
+      "Northern Ireland",
     ]);
   });
 
@@ -43,5 +43,19 @@ describe("dateWithinSixMonths", () => {
     const date = "2025-01-01";
     const result = dateWithinSixMonths(date);
     expect(result).toBe(false);
+  });
+});
+
+describe("convertKebabToTitleCase", () => {
+  it("returns a string", () => {
+    const str = "hello-world";
+    const result = convertKebabToTitleCase(str);
+    expect(typeof result).toEqual("string");
+  });
+
+  it("returns a string with the first letter of each word capitalised", () => {
+    const str = "hello-world";
+    const result = convertKebabToTitleCase(str);
+    expect(result).toEqual("Hello World");
   });
 });

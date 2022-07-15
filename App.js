@@ -19,7 +19,11 @@ export default function App() {
             name="Home"
             component={HomeScreen}
           />
-          <Stack.Screen name="Edit" component={EditScreen} />
+          <Stack.Screen
+            options={{ headerTintColor: "#583DFF" }}
+            name="Edit"
+            component={EditScreen}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
