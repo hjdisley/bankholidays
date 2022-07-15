@@ -12,8 +12,8 @@ export default useFetchData = (url) => {
   const fetchData = async (url) => {
     setIsLoading(true);
     try {
-      const repsonse = await axios.get(url);
-      setData(repsonse.data);
+      const { data } = await axios.get(url);
+      setData(extractBankHolidays(data));
     } catch (error) {
       setError(true);
     } finally {
@@ -23,8 +23,6 @@ export default useFetchData = (url) => {
 
   useEffect(() => {
     fetchData(url);
-
-    extractBankHolidays(data);
 
     return () => {
       isSubscribed.current = false;
