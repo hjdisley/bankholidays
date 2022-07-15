@@ -54,7 +54,6 @@ export default function HomeScreen({ navigation }) {
           return (
             <Center>
               <BankHolidayCard
-                testID={editButton}
                 data={data[selectedDivision]}
                 navigation={navigation}
                 key={i + holiday.title + holiday.date}

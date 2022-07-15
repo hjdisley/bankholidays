@@ -1,5 +1,9 @@
-import { dateWithinSixMonths, extractBankHolidays } from "./utils";
-import { testData } from "../testData";
+import {
+  dateWithinSixMonths,
+  extractBankHolidays,
+  convertKebabToTitleCase,
+} from "./utils";
+import { testData } from "../mockData";
 
 describe("extractBankHolidays", () => {
   it("should return an object", () => {
